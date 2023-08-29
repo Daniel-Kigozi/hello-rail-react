@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "../style.css";
 
 const Greeting = () => {
   const [greeting, setGreeting] = useState("");
@@ -8,7 +7,7 @@ const Greeting = () => {
   useEffect(() => {
     const fetchRandomGreeting = async () => {
       try {
-        const response = await axios.get("/greetings/random");
+        const response = await axios.get("/greetings/index");
         setGreeting(response.data.greeting);
       } catch (error) {
         console.error("Error fetching greeting:", error);
